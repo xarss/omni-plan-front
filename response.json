@@ -1,0 +1,66 @@
+{
+    "title": "Picnic Planning",
+    "success": true,
+    "inputs": [
+        {
+            "inputType": "text",
+            "question": "What is the date of the picnic?",
+            "mandatory": true,
+            "id": "date1"
+        },
+        {
+            "inputType": "text",
+            "question": "What time will the picnic start?",
+            "mandatory": true,
+            "id": "text1"
+        },
+        {
+            "inputType": "text",
+            "question": "What location will you have the picnic?",
+            "mandatory": true,
+            "id": "text2"
+        },
+        {
+            "inputType": "textarea",
+            "question": "What food items will you bring? (List items)",
+            "mandatory": true,
+            "id": "textarea1"
+        },
+        {
+            "inputType": "checkbox",
+            "question": "Do you need to bring any games or activities?",
+            "mandatory": false,
+            "id": "checkbox1"
+        },
+        {
+            "inputType": "textarea",
+            "question": "What activities are planned?",
+            "mandatory": false,
+            "id": "textarea2"
+        },
+        {
+            "inputType": "checkbox",
+            "question": "Will you invite anyone to join the picnic?",
+            "mandatory": true,
+            "id": "checkbox2"
+        },
+        {
+            "inputType": "textarea",
+            "question": "Who will you invite? (List names)",
+            "mandatory": false,
+            "id": "textarea3"
+        },
+        {
+            "inputType": "checkbox",
+            "question": "Do you need to consider any weather conditions?",
+            "mandatory": true,
+            "id": "checkbox3"
+        },
+        {
+            "inputType": "text",
+            "question": "What is the backup plan in case of bad weather?",
+            "mandatory": false,
+            "id": "text3"
+        }
+    ]
+}
