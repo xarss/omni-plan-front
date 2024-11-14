@@ -9,7 +9,7 @@ export async function test() {
 
 export async function getFormStructure(payload) {
     return await axios.post(
-        `${baseURL}/formStructure`,
+        `${baseURL}/formStructure/default`,
         payload
     );
 }

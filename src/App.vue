@@ -5,14 +5,14 @@
     <span v-else>☀️</span>
   </button>
   <div v-if="isLoading" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
-      <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
-      <span class="sr-only">Loading...</span>
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+    <span class="sr-only">Loading...</span>
   </div>
   <div class="min-h-screen flex items-center justify-center dark:bg-gray-900">
     <div v-if="!formStructure" class="max-w-md mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
       <h1 class="w-full text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">What do you want to plan?</h1>
 
-      <textarea type="text" :value="prompt" @keydown="onPromptChange"
+      <textarea type="text" :v-model="prompt" @keydown="onPromptChange"
         class="w-full resize-none p-3 mb-4 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 dark:bg-gray-700 dark:text-gray-100"
         placeholder="Type your plan here..."></textarea>
 
@@ -51,10 +51,14 @@ export default {
       this.formStructure = null;
     },
     onPromptChange(event) {
-      if (event.key === "enter" && !event.shiftKey) {
-        this.getFormStructure()
-        return;
+      if (event.key === "Enter") {
+        if (!event.shiftKey) {
+          this.getFormStructure();
+          event.preventDefault();
+          return;
+        }
       }
+
       this.prompt = event.target.value;
     },
     toggleTheme() {
